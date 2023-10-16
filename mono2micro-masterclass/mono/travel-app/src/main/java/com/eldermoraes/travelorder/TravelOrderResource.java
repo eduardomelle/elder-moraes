@@ -21,9 +21,9 @@ public class TravelOrderResource {
     }
 
     @GET
-    @Path("findbyId")
+    @Path("findbyid")
     @Produces(MediaType.APPLICATION_JSON)
-    public TravelOrder findbyId(@QueryParam("id") long id) {
+    public TravelOrder findById(@QueryParam("id") long id) {
         return TravelOrder.findById(id);
     }
 

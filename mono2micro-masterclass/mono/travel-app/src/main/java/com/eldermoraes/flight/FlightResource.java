@@ -8,6 +8,7 @@ import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
 @Path("flights")
@@ -17,6 +18,13 @@ public class FlightResource {
     @Produces(MediaType.APPLICATION_JSON)
     public List<Flight> flights() {
         return Flight.listAll();
+    }
+
+    @GET
+    @Path("findbyid")
+    @Produces(MediaType.APPLICATION_JSON)
+    public Flight findById(@QueryParam("id") long id) {
+        return Flight.findById(id);
     }
 
     @Transactional

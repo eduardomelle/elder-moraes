@@ -1,4 +1,4 @@
-package com.eldermoraes.flight;
+package com.eldermoraes.hotel;
 
 import java.util.List;
 
@@ -11,30 +11,30 @@ import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.QueryParam;
 import jakarta.ws.rs.core.MediaType;
 
-@Path("flight")
-public class FlightResource {
+@Path("hotel")
+public class HotelResource {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public List<Flight> flights() {
-        return Flight.listAll();
+    public List<Hotel> hotels() {
+        return Hotel.listAll();
     }
 
     @GET
     @Path("findbyid")
     @Produces(MediaType.APPLICATION_JSON)
-    public Flight findById(@QueryParam("id") long id) {
-        return Flight.findById(id);
+    public Hotel findById(@QueryParam("id") long id) {
+        return Hotel.findById(id);
     }
 
     @Transactional
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Flight newFlight(Flight flight) {
-        flight.id = null;
-        flight.persist();
-        return flight;
+    public Hotel newHotel(Hotel hotel) {
+        hotel.id = null;
+        hotel.persist();
+        return hotel;
     }
 
 }

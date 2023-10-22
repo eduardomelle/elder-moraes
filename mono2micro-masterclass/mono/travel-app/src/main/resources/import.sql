@@ -10,3 +10,10 @@ INSERT INTO Flight(id, travelOrderId, fromAirport, toAirport) VALUES (nextval('f
 INSERT INTO Flight(id, travelOrderId, fromAirport, toAirport) VALUES (nextval('flight_sequence'), 2, 'GRU', 'JFK');
 INSERT INTO Flight(id, travelOrderId, fromAirport, toAirport) VALUES (nextval('flight_sequence'), 3, 'GRU', 'ATL');
 INSERT INTO Flight(id, travelOrderId, fromAirport, toAirport) VALUES (nextval('flight_sequence'), 4, 'GRU', 'MEX');
+
+create sequence hotel_sequence start with 1 increment by 1;
+INSERT INTO Hotel(id, travelOrderId, nights) VALUES (nextval('hotel_sequence'), 1, 5);
+INSERT INTO Hotel(id, travelOrderId, nights) VALUES (nextval('hotel_sequence'), 1, 2);
+INSERT INTO Hotel(id, travelOrderId, nights) VALUES (nextval('hotel_sequence'), 1, 3);
+INSERT INTO Hotel(id, travelOrderId, nights) VALUES (nextval('hotel_sequence'), 1, 10);
+INSERT INTO Hotel(id, travelOrderId, nights) VALUES (nextval('hotel_sequence'), 1, 30);
